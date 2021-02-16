@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class Pokemon  : MonoBehaviour 
 {
-    private PokemonID pokemonID;
+    private PokemonData _pokemonData;
 
     private pokemonState state;
 

@@ -10,13 +10,15 @@ public class SceneControl  : MonoBehaviour
 
     private void Awake()
     {
-        auth.loggedIn += StartGame;
-        
-        DontDestroyOnLoad(this);
+        if (auth != null)
+        {
+            auth.loggedIn += StartGame;
+        }
     }
 
     public void StartGame()
     {
+        auth.loggedIn -= StartGame;
         SceneManager.LoadScene("Game");
     }
 

@@ -1,18 +1,20 @@
 using UnityEngine;
 
 
-public class expandableMenu   : MonoBehaviour 
+public class ExpandableMenu : MonoBehaviour
 {
-
     [SerializeField]
-    private GameObject canvas;
+    private bool state;
+    
+    [SerializeField]
+    private GameObject[] canvas;
 
-    public void Expand() {
-        // TODO implement here
+    public void AlternateMenu()
+    {
+        state = !state;
+        foreach (var canva in canvas)
+        {
+            canva.SetActive(state);
+        }
     }
-
-    public void Collapse() {
-        // TODO implement here
-    }
-
 }

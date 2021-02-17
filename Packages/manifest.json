@@ -1,6 +1,5 @@
 {
     "dependencies": {
-    "com.ptc.vuforia.engine": "git+https://git-packages.developer.vuforia.com#9.7.5",
     "com.unity.2d.pixel-perfect": "4.0.1",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.2d.spriteshape": "5.1.1",

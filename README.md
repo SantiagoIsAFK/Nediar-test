@@ -1,6 +1,21 @@
 # RETRO POKEMON GO
 Desarrollado por Santiago Morales para NEDIAR como test de Unity Developer
 
+# Ramas
+
+## main
+Contiene la version de la entrega final y posteriormente la version terminada (que le hace falta pequeños ajustes)
+
+## develop
+
+Contiene los diferentes features
+
+## documentation
+
+Contiene los artefactos para la documentacion del software
+
+# Carpetas
+
 ## /_Doc
 
 Documentacion de la arquitectura descrita bajo el modelo 4+1.
@@ -13,7 +28,7 @@ Más información del a NTC Estudio en [SantiagoIsAFK](https://santiagoisafk.wor
 
 Builds generadas durante el desarrollo segun la plataforma.
 
-## Licencia
+# Licencia
 
 Licencia [MIT](https://choosealicense.com/licenses/mit/)
 
@@ -35,3 +50,7 @@ APTITUD PARA UN PROPÓSITO PARTICULAR Y NO INFRACCIÓN. EN NINGÚN CASO
 LOS AUTORES O TITULARES DE LOS DERECHOS DE AUTOR SERÁN RESPONSABLES DE CUALQUIER RECLAMO, DAÑOS U OTROS
 RESPONSABILIDAD, YA SEA EN UNA ACCIÓN DE CONTRATO, AGRAVIO O DE OTRO MODO, QUE SURJA DE,
 FUERA O EN RELACIÓN CON EL SOFTWARE O EL USO U OTROS NEGOCIOS EN EL SOFTWARE.
+
+## Modelo 3D de la Pokeball por Darren McNerney 3D
+Licencia [Pokeball](https://sketchfab.com/3d-models/pokeball-0449a18a7dcc49d288263f64befa459f)
+

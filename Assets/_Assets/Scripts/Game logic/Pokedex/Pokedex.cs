@@ -28,6 +28,9 @@ public class Pokedex : MonoBehaviour
     [SerializeField]
     private List<int> idToCatchList, idCaughtList;
 
+    public List<int> IDToCatchList => idToCatchList;
+    public List<int> IDCaughtList => idCaughtList;
+
     private void Awake()
     {
         CreatePokemonList();

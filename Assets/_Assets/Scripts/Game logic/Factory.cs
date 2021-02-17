@@ -4,7 +4,7 @@ using UnityEngine;
 public abstract class Factory : MonoBehaviour{
 
     [SerializeField]
-    private GameObject Entity;
+    private PoolOfEntities pool;
 
 
     /// <summary>
@@ -15,12 +15,15 @@ public abstract class Factory : MonoBehaviour{
     /// <summary>
     /// @return
     /// </summary>
-    private void InstantiateEntity() {
+    protected void InstantiateEntity()
+    {
+        GameObject entity = pool.GetEntity(GetRespawn());
+        ConfigEntity(entity);
     }
 
     /// <summary>
     /// @return
     /// </summary>
-    protected abstract void ConfigEntity();
+    protected abstract void ConfigEntity(GameObject entity);
 
 }

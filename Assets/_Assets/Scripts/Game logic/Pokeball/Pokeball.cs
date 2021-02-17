@@ -1,9 +1,10 @@
 using UnityEngine;
 public class Pokeball  : MonoBehaviour 
 {
-
-    private pokeballState state;
-
+    public delegate void stateAction(string state);
+    public stateAction UpdateState;
+    
+    
     private Pokemon pokemonInside;
 
 

@@ -7,6 +7,7 @@ using UnityEngine;
 public class PokemonState : StateMachineBehaviour
 {
     private Pokemon m_pokemon;
+    [SerializeField]
     private string[] states = new string[] {"WakeUp", "InScene", "InCatch", "Caught", "Escaping", "InDanger", "Die"};
         
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

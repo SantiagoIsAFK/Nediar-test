@@ -6,8 +6,6 @@ public class PoolOfEntities   : MonoBehaviour
     [SerializeField]
     private GameObject entity;
     
-    [SerializeField]
-    private float sizeMin;
 
     [SerializeField]
     private List<GameObject> entitiesList = new List<GameObject>();
@@ -20,6 +18,9 @@ public class PoolOfEntities   : MonoBehaviour
         {
             if (!entitiesList[i].activeInHierarchy)
             {
+                entitiesList[i].transform.SetParent(tf);
+                entitiesList[i].transform.localPosition = Vector3.zero;
+                entitiesList[i].transform.localRotation = Quaternion.identity;
                 entitiesList[i].SetActive(true);
                 return entitiesList[i];
             }

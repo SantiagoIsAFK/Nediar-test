@@ -95,7 +95,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2344856241776377871
 Transform:
   m_ObjectHideFlags: 0
@@ -257,7 +257,7 @@ GameObject:
   - component: {fileID: 2344856242549550513}
   m_Layer: 0
   m_Name: Pokemon
-  m_TagString: Untagged
+  m_TagString: Pokemon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -325,9 +325,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frontSprite: {fileID: 2344856242404816255}
   backSprite: {fileID: 2344856241776377870}
-  consumingLifetime: 0
-  lifetime: 2
-  remainingLifetime: 0
+  lifetime: 4
 --- !u!1 &2344856242990479893
 GameObject:
   m_ObjectHideFlags: 0

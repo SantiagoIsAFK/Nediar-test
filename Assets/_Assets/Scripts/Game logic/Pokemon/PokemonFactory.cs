@@ -14,7 +14,7 @@ public class PokemonFactory : Factory
 
     private void Start()
     {
-        currentTime = respawnRateTime - 5;
+        currentTime = respawnRateTime;
     }
 
     private void Update()

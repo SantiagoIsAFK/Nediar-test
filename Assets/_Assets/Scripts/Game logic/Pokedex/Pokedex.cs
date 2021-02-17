@@ -9,7 +9,8 @@ using UnityEngine;
 
 public class Pokedex : MonoBehaviour
 {
-    const int NumOfPokemon = 893;
+    [SerializeField]
+    const int TotalNumOfPokemon = 893;
     
     public static Pokedex instance;
     
@@ -38,10 +39,10 @@ public class Pokedex : MonoBehaviour
 
     public void CreatePokemonList()
     {
-        pokemonIDs = new int[NumOfPokemon];
-        currentPokemonData = new PokemonData[NumOfPokemon];
+        pokemonIDs = new int[TotalNumOfPokemon];
+        currentPokemonData = new PokemonData[TotalNumOfPokemon];
         
-        for (int i = 0; i < NumOfPokemon; i++)
+        for (int i = 0; i < TotalNumOfPokemon; i++)
         {
             pokemonIDs[i] = i+1;
         }
@@ -52,7 +53,7 @@ public class Pokedex : MonoBehaviour
 
     public IEnumerator GetPokemonData(int index, Action<PokemonData> callback)
     {
-        if (index>0 && index <NumOfPokemon)
+        if (index>0 && index <TotalNumOfPokemon)
         {
             if (currentPokemonData[index - 1] != null)
             {
@@ -76,7 +77,7 @@ public class Pokedex : MonoBehaviour
     /// <summary>
     /// @param _pokemon
     /// </summary>
-    private void CatchNewPokemon(int idCaught)
+    public void CatchNewPokemon(int idCaught)
     {
         int i = idToCatchList.FindIndex(poke => poke == idCaught);
         if (i>=0)

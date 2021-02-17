@@ -14,7 +14,8 @@ public class Pokemon  : MonoBehaviour
     {
         get => m_pokemonData;
     }
-
+    
+    private Collider m_collider;
     private Animator m_animator;
     [SerializeField]
     private SpriteRenderer frontSprite, backSprite;
@@ -54,6 +55,7 @@ public class Pokemon  : MonoBehaviour
     public void ConfigEntity(PokemonData pokemon)
     {
         m_animator = this.GetComponent<Animator>();
+        m_collider = this.GetComponent<Collider>();
         m_pokemonData = pokemon;
         
         frontSprite.sprite = m_pokemonData.Sprites[0];
@@ -61,6 +63,7 @@ public class Pokemon  : MonoBehaviour
         
         
         remainingLifetime = lifetime;
+        m_collider.enabled = true;
         
         m_animator.SetTrigger("WakeUp");
     }
@@ -83,35 +86,31 @@ public class Pokemon  : MonoBehaviour
     /// </summary>
     public void GetCaught(Pokeball _pokeball )
     {
-        _pokeball.UpdateState += CheckCatchResult;
-        m_animator.SetTrigger("InCatch");
+        m_collider.enabled = false;
+        m_animator.SetTrigger("Catch");
     }
 
     /// <summary>
     /// @return
     /// </summary>
-    private void CheckCatchResult(string state) {
-        switch (state)      
+    public void CatchResult(bool result) {
+        if(result) 
+            m_animator.SetTrigger("Caught");
+        else
         {
-            case "SuccessfulCatch":
-                m_animator.SetTrigger("Caught");
-                break;
-            case "FailedCatch":
-                m_animator.SetTrigger("CatchFailed");
-                break;
+            m_collider.enabled = true;
+            m_animator.SetTrigger("CatchFailed");
         }
     }
     #endregion
 
 
     #region OtherFunctions
-    [SerializeField]
     private bool consumingLifetime=false;
     
     [SerializeField]
     private float lifetime;
 
-    [SerializeField]
     private float remainingLifetime;
 
     private void Update()
@@ -128,7 +127,7 @@ public class Pokemon  : MonoBehaviour
         if (remainingLifetime <= 0)
         {
             consumingLifetime = false;
-            m_animator.SetTrigger("lifeTimeIsOver");
+            m_animator.SetTrigger("LifeTimeIsOver");
         }
     }
 

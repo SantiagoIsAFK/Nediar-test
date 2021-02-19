@@ -1,0 +1,1 @@
+Vuforia no es compatible con una build para PC, solamente se puede testear desde el editor. Por lo tanto esta build no es funcional en AR.

@@ -6,12 +6,13 @@ Desarrollado por Santiago Morales para NEDIAR como test de Unity Developer
 ## main
 Contiene la version de la entrega final y posteriormente la version terminada (que le hace falta pequeños ajustes)
 
-## develop
+## Hotfixes (Nueva)
+Añadi esta rama solamente para solucionar bugs de las versiones de la rama main
 
+## develop
 Contiene los diferentes features
 
 ## documentation
-
 Contiene los artefactos para la documentacion del software
 
 # Carpetas

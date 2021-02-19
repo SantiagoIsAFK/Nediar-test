@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -2067402452, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
+  m_Script: {fileID: -2067402452, guid: 4bc5fd733b147194692297d23f623541, type: 3}
   m_Name: VuforiaConfiguration
   m_EditorClassIdentifier: 
   vuforia:
     vuforiaLicenseKey: AVrApBr/////AAABmSkZPhpp2UlCkFatcAuauiFasXR3FpRiREwaKQeXaXXMwCUai15zL0y+7yU/VJlP3Bcf7Vf5gatXGSSl2ttzG5iEugJ1ZBNs0Q286+RbZKH7uoMXpvlnd4u1O3hSfNOuOqxF5hsA6O8e/hWB0mUq9s0Y85XBBtpayTxFhvMFvxJJ1i1DcD/DzbAF+Cj+JE3maD1wj6cWTxlRXBSRTHL0/lMe+7vhdcnj7z85YdNcdNP9t7z7AVD+blrdQ3JT98fMV3WJlQ9BbhkL1j+NAWbzf+R5y+1nL1gHwIKiP7jNaEIsKeWTA8/xABCy2gQPC+t9WhaN2z7a79PRL1hjNbuKohTp7crUZctB44QvUSwDLkDn
-    ufoLicenseKey: QVJ1enZVSC8vLy8vQUFBQUtLV1poU0ZvMVVlM3FEbVM3TENDN295UWhXWm5xb2tic21obWpNVEN5Y1RwM2JEZFV2WmVFbDBWTVNiUHB3eUdoVTdvNk9zOVI3WnVGaVVsaDQwWjhCUElSNkFvM1NNN1VOWE9CK0dHTkp4eUtjNk1qa3lCUHc5MEZlWFpvd1pRTkpBOFg1aWhHYWt3L2QwZFgrcTFRSWpBYmczTEQvYmYwL3FDWTZ2UksvbXA1eUxFVWh0TGVFaW5BbVRXMnpYNCtUMEx0VzdDc0Fjb0Nic3dFUUtsSmJHQitvaFVybEtGY044TGpFd1F5VVZtMTVWZU9PYnA4VzFSbDRRdGkrazlRV1lHaVZRUytNTVJqMTI2aG5udzd2RFlobmhGdFplTTlKK0syMGMya1ViaVBhb0M5ZWw1cDNxYUZndVZjS2xIb0NJd0QyVnZsUmo5cEY5TE04dm9JbVVrNTVFR2NHK2VkQWZjT3JHekNlVy8=
+    ufoLicenseKey: QVZBNWNRNy8vLy8vQUFBQUtMTlJlL2NNTUV2aHRST0tOb1NTRWRZL04vY3NYckhDazJGSi93WXo4SmJWOG94a2JIZUdpVVc2M0I4ZVdSeEVjM0tlVi9oL0JFdWFFZWt5LzdXVSt3dnN1R0FhVi9oTHFKb1Bnd2J0eDVzdmNGaGdsaGlRbDA3N010MW85SFlMeFplbTZDYWhSVWhDbk1iVEswb2dEdG83VnhXY0dDdXN2bnhTRG9wOFRhV3BYVnJnei8zVXBKWHBBQ242VGQyV0JzeXY0Q2xKUFpSWVV3UkFzNkJ0WHhVUld4NmFjMEp4Q1ZIcXBOYUNHQjZQMDdyV3lVQ29SWnFybDIvSndFckFmWEh3SDJqckM4OWYyUEQwV29iZCtoOEtTdWg3YWkrUlg0d1ZpOXpxc1BRdk5COFZCWTUza2cyOXVCaWRST2xkUVNlSFkxZkJGWFY1TFdzdTVHUHR1VS9mWGxwaHdoNG1ub3A4MzNEVmgrdno=
     delayedInitialization: 0
     cameraDeviceModeSetting: -1
     maxSimultaneousImageTargets: 1
@@ -31,7 +31,8 @@ MonoBehaviour:
     depthMaskShader: {fileID: 4800000, guid: 1ce7eb78425fb1540838bc9d5d95857a, type: 3}
   videoBackground:
     numDivisions: 2
-    videoBackgroundShader: {fileID: 4800000, guid: f40623b353e2f1943b1b3ba42975db7a, type: 3}
+    videoBackgroundShader: {fileID: 4800000, guid: f40623b353e2f1943b1b3ba42975db7a,
+      type: 3}
     unlitShader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
     videoBackgroundEnabled: 1
   deviceTracker:

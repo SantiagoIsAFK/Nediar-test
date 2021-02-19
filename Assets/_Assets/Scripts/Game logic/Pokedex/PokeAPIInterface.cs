@@ -24,7 +24,7 @@ public class PokeAPIInterface : MonoBehaviour{
 
         yield return pokeInfoRequest.SendWebRequest();
 
-        if ((pokeInfoRequest.result == UnityWebRequest.Result.ConnectionError) || (pokeInfoRequest.result == UnityWebRequest.Result.ProtocolError))
+        if (pokeInfoRequest.isNetworkError || pokeInfoRequest.isHttpError)
         {
             Debug.LogError(pokeInfoRequest.error);
             yield break;
@@ -65,7 +65,7 @@ public class PokeAPIInterface : MonoBehaviour{
             
             yield return pokeSpriteRequest.SendWebRequest();
         
-            if ((pokeSpriteRequest.result == UnityWebRequest.Result.ConnectionError) || (pokeSpriteRequest.result == UnityWebRequest.Result.ProtocolError))
+            if (pokeSpriteRequest.isNetworkError || pokeSpriteRequest.isHttpError)
             {
                 Debug.LogWarning(pokeSpriteRequest.error);
 

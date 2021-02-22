@@ -51,7 +51,7 @@ PlayerSettings:
   m_MTRendering: 1
   m_StackTraceTypes: 010000000100000001000000010000000100000001000000
   iosShowActivityIndicatorOnLoading: -1
-  androidShowActivityIndicatorOnLoading: -1
+  androidShowActivityIndicatorOnLoading: 0
   iosUseCustomAppBackgroundBehavior: 0
   iosAllowHTTPDownload: 1
   allowedAutorotateToPortrait: 0
@@ -124,7 +124,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 0.1
+  bundleVersion: 0.2
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -430,7 +430,9 @@ PlayerSettings:
     tvOS: 1
   m_BuildTargetGroupLightmapEncodingQuality:
   - m_BuildTarget: Standalone
-    m_EncodingQuality: 1
+    m_EncodingQuality: 0
+  - m_BuildTarget: Android
+    m_EncodingQuality: 2
   m_BuildTargetGroupLightmapSettings: []
   playModeTestRunnerEnabled: 0
   runPlayModeTestAsEditModeTest: 0

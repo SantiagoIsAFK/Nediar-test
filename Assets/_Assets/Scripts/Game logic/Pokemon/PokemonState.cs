@@ -4,38 +4,42 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class PokemonState : StateMachineBehaviour
+namespace GameLogic
 {
-    private Pokemon m_pokemon;
-    [SerializeField]
-    private string[] states = new string[] {"WakeUp", "InScene", "InCatch", "Caught", "Escaping", "InDanger", "Die"};
-        
-    public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    public class PokemonState : StateMachineBehaviour
     {
-        base.OnStateEnter(animator, stateInfo, layerIndex);
+        // <summary>Reference to the entity</summary>
+        private Pokemon m_pokemon;
 
-        if (m_pokemon == null)
+        //<summary>Group of the states that will be notify to the entity</summary>
+        [SerializeField] private string[] states = new string[]
+            {"WakeUp", "InScene", "InCatch", "Caught", "Escaping", "InDanger", "Die"};
+
+        public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            m_pokemon = animator.gameObject.GetComponent<Pokemon>();
-        }
+            base.OnStateEnter(animator, stateInfo, layerIndex);
 
-        
-
-        foreach (var state in states)
-        {
-            if (Animator.StringToHash(state) == stateInfo.shortNameHash)
+            //Make the entity reference
+            if (m_pokemon == null)
             {
-                try
+                m_pokemon = animator.gameObject.GetComponent<Pokemon>();
+            }
+
+
+            //Search each state and compare the states array, if it find ones, then, notify
+            foreach (var state in states)
+            {
+                if (Animator.StringToHash(state) == stateInfo.shortNameHash) //NameHash is the only way to identify the animator state
                 {
-                    m_pokemon.ChangeState(state);
-                }
-                catch (Exception e)
-                {
+                    try
+                    {
+                        m_pokemon.ChangeState(state); //change the state, the entity will notify its state
+                    }
+                    catch (Exception e)
+                    {
+                    }
                 }
             }
         }
-        
     }
-
-    
 }

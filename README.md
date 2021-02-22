@@ -1,13 +1,21 @@
 # RETRO POKEMON GO
 Desarrollado por Santiago Morales para NEDIAR como test de Unity Developer
 
+# Notas
+La version para PC no es funcional debido a que Vuforia no es compatible con esta.
+Es necesario un target para el uso de la Realidad Aumentada, se encuentra en la carpeta /_Builds
+El target debe ser usado de manera frontal.
+
 # Ramas
 
 ## main
 Contiene la version de la entrega final y posteriormente la version terminada (que le hace falta pequeños ajustes)
 
-## Hotfixes (Nueva)
-Añadi esta rama solamente para solucionar bugs de las versiones de la rama main
+## hotfixes
+Rama para solucionar bugs de las versiones de la rama main
+
+## release
+Rama para añadir la documentacion a la rama de desarrollo y preparar la version de produccion hacia el main
 
 ## develop
 Contiene los diferentes features

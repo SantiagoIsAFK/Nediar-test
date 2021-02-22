@@ -1,20 +1,31 @@
 using UnityEngine;
 
 
-public class ExpandableMenu : MonoBehaviour
+namespace PokeUI
 {
-    [SerializeField]
-    private bool state;
-    
-    [SerializeField]
-    private GameObject[] canvas;
-
-    public void AlternateMenu()
+    /// <summary>
+    /// Allow active or deactive a Gameobject, use to open and close a UI
+    /// </summary>
+    public class ExpandableMenu : MonoBehaviour
     {
-        state = !state;
-        foreach (var canva in canvas)
+        
+        [SerializeField] private bool state;
+
+        /// <summary>
+        /// Array with GO to open and close
+        /// </summary>
+        [SerializeField] private GameObject[] canvas;
+
+        /// <summary>
+        /// Alternate its state
+        /// </summary>
+        public void AlternateMenu()
         {
-            canva.SetActive(state);
+            state = !state;
+            foreach (var canva in canvas)
+            {
+                canva.SetActive(state);
+            }
         }
     }
 }

@@ -1,29 +1,37 @@
+using System;
 using UnityEngine;
 
-
-public abstract class Factory : MonoBehaviour{
-
-    [SerializeField]
-    private PoolOfEntities pool;
-
-
+namespace GameLogic
+{
     /// <summary>
-    /// @return
+    /// Factory of gameObjects, this is use for Pokeballs and Pokemon instances
     /// </summary>
-    protected abstract Transform GetRespawn();
-
-    /// <summary>
-    /// @return
-    /// </summary>
-    protected void InstantiateEntity()
+    public abstract class Factory : MonoBehaviour
     {
-        GameObject entity = pool.GetEntity(GetRespawn());
-        ConfigEntity(entity);
+        [SerializeField] private PoolOfEntities pool;
+
+
+        /// <summary>
+        /// return a transform to instantiate the object
+        /// </summary>
+        /// <returns>Axis o point of spawn</returns>
+        protected abstract Transform GetRespawn();
+
+        
+        
+        /// <summary>
+        /// Use a pool to obtain a specific entity
+        /// </summary>
+        protected void InstantiateEntity()
+        {
+            GameObject entity = pool.GetEntity(GetRespawn());
+            ConfigEntity(entity);
+        }
+
+        /// <summary>
+        /// Function to initialize the entity and end the build
+        /// </summary>
+        /// <param name="entity">prefab obtained in the pool</param>
+        protected abstract void ConfigEntity(GameObject entity);
     }
-
-    /// <summary>
-    /// @return
-    /// </summary>
-    protected abstract void ConfigEntity(GameObject entity);
-
 }

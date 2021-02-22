@@ -2,59 +2,57 @@ using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-
-public class PokemonFactory : Factory
+namespace GameLogic
 {
-    [SerializeField]
-    private Transform[] respawnPoints;
-
-    [SerializeField]
-    private float respawnRateTime;
-    private float currentTime;
-
-    private void Start()
-    {
-        currentTime = respawnRateTime;
-    }
-
-    private void Update()
-    {
-        if (currentTime >= respawnRateTime)
-        {
-            InstantiateEntity();
-            currentTime = 0;
-        }
-        else
-        {
-            currentTime+= Time.deltaTime;
-        }
-    }
-
     /// <summary>
-    /// @return
+    /// Is the factory that allow the creation and the launch of the pokemon
     /// </summary>
-    protected override Transform GetRespawn()
+    public class PokemonFactory : Factory
     {
-        return respawnPoints[Random.Range(0, respawnPoints.Length)];
-    }
+        // <summary> Array with the respawn points </summary>
+        [SerializeField] private Transform[] respawnPoints;
 
-    /// <summary>
-    /// @return
-    /// </summary>
-    protected override void ConfigEntity(GameObject entity)
-    {
-        PokemonData pokemon = new PokemonData();
+        // <summary> Time to respawn </summary>
+        [SerializeField] private float respawnRateTime;
 
-        StartCoroutine(Pokedex.instance.GetPokemonData(
-            Pokedex.instance.IDToCatchList[Random.Range(0, Pokedex.instance.IDToCatchList.Count)],
-            result =>
+        // <summary> Step to reach the respawnRateTime </summary>
+        private float currentTime;
+
+        private void Start()
+        {
+            //var initialization
+            currentTime = respawnRateTime;
+        }
+
+        private void Update()
+        {
+            if (currentTime >= respawnRateTime)
             {
-                entity.GetComponent<Pokemon>().ConfigEntity(result); 
+                InstantiateEntity();
+                currentTime = 0;
             }
-        ));
+            else
+            {
+                currentTime += Time.deltaTime;
+            }
+        }
 
+        
+        protected override Transform GetRespawn()
+        {
+            return respawnPoints[Random.Range(0, respawnPoints.Length)];
+        }
+
+        protected override void ConfigEntity(GameObject entity)
+        {
+            PokemonData pokemon = new PokemonData();
+
+            //Here are a coroutine  because the obtain method need be asynchronous
+            //because the web request can take time
+            StartCoroutine(Pokedex.instance.GetPokemonData(
+                Pokedex.instance.IDToCatchList[Random.Range(0, Pokedex.instance.IDToCatchList.Count)],
+                result => { entity.GetComponent<Pokemon>().ConfigEntity(result); }
+            ));
+        }
     }
-    
-    
-
 }

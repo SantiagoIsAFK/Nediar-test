@@ -2,29 +2,32 @@ using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneControl  : MonoBehaviour
+namespace Core
 {
-    
-    [SerializeField]
-    private Authentication auth;
-
-    private void Awake()
+    /// <summary>
+    /// Control the changes of the scenes
+    /// </summary>
+    public class SceneControl : MonoBehaviour
     {
-        if (auth != null)
+        [SerializeField] private Authentication auth; //firebase instance
+
+        private void Awake()
         {
-            auth.loggedIn += StartGame;
+            if (auth != null)
+            {
+                auth.loggedIn += StartGame;
+            }
+        }
+
+        public void StartGame()
+        {
+            auth.loggedIn -= StartGame;
+            SceneManager.LoadScene("Game");
+        }
+
+        public void CloseApp()
+        {
+            Application.Quit();
         }
     }
-
-    public void StartGame()
-    {
-        auth.loggedIn -= StartGame;
-        SceneManager.LoadScene("Game");
-    }
-
-    public void CloseApp()
-    {
-        Application.Quit();
-    }
-    
 }

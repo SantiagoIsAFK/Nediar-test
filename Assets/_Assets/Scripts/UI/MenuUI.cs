@@ -1,39 +1,29 @@
 using UnityEngine;
 using UnityEngine.UI;
+using Core;
 
-public class MenuUI   : MonoBehaviour
+namespace PokeUI
 {
-    [SerializeField]
-    private InputField inpEmail;
-    [SerializeField]
-    private InputField inpPassword;
-    
-    [SerializeField]
-    private Text txtNotification;
-
-    [SerializeField]
-    private Authentication auth;
-
-    public void LoginButton()
+    public class MenuUI : MonoBehaviour
     {
-        
-        //Call the login coroutine passing the email and password
-        StartCoroutine(auth.Login(inpEmail.text, inpPassword.text, (result) =>
+        [SerializeField] private InputField inpEmail;
+        [SerializeField] private InputField inpPassword;
+
+        [SerializeField] private Text txtNotification;
+
+        [SerializeField] private Authentication auth; //the firebase instance
+
+        public void LoginButton()
         {
-            txtNotification.text = result;
-        }));
-        
-    }
-    
-    public void RegisterButton()
-    {
-        
-        //Call the register coroutine passing the email, password, and username
-        StartCoroutine(auth.Register(inpEmail.text, inpPassword.text, (result) =>
+            //call the courutine and return a message with the result, if the login is success, just call a event in the auth class
+            StartCoroutine(auth.Login(inpEmail.text, inpPassword.text, (result) => { txtNotification.text = result; }));
+        }
+
+        public void RegisterButton()
         {
-            txtNotification.text = result;
-        }));
-        
+            //call the courutine and return a message with the result
+            StartCoroutine(auth.Register(inpEmail.text, inpPassword.text,
+                (result) => { txtNotification.text = result; }));
+        }
     }
-    
 }
